@@ -1,13 +1,16 @@
 services:
   web:
     build: .
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    command: python /ch4-bookstore/manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - .:/ch4-bookstore
     ports:
       - 8000:8000
     depends_on:
       - db
+    environment:
+      - "DJANGO_SECRET_KEY=django-insecure-hv1(yV_Yr6mI_mETntF3S00j_AK_gHoqhTwpGKUMTJ8JzFY)xl"
+      - "DJANGO_DEBUG=True"
   db:
     image: postgres:17.4
     volumes:
