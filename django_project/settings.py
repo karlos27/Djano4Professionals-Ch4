@@ -88,8 +88,7 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL",
-    default="postgres://postgres@db/postgres")
+    "default": env.dj_db_url("DATABASE_URL", default="postgres://postgres@db/postgres")
 }
 
 
@@ -157,3 +156,5 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*"]
 ACCOUNT_LOGIN_METHODS = ["email"]
 ACCOUNT_SIGNUP_FIELDS = ["email*", "username", "password1*"]
+
+DEFAULT_FROM_EMAIL = "admin@djangobookstore.com"
