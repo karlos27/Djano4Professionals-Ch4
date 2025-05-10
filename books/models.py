@@ -15,6 +15,11 @@ class Book(models.Model):
         upload_to="covers/", blank=True, null=True, default="covers/cover.jpg"
     )
 
+    class Meta:
+        permissions = [
+            ("special_status", "Can read all books"),
+        ]
+
     def __str__(self):
         return self.title
 
